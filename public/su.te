@@ -12,6 +12,9 @@ userdebug_or_eng(`
   # wrapped to ensure that it does not exist at all on -user builds.
   typeattribute su mlstrustedsubject;
 
+  # Allow platform apps to use su
+  allow platform_app su_exec:file { execute_no_trans getattr open read execute };
+
   # Add su to various domains
   net_domain(su)
 
