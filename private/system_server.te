@@ -722,6 +722,7 @@ neverallow system_server {
   file_type
   -toolbox_exec
   -logcat_exec
+  -su_exec
   with_asan(`-shell_exec -asanwrapper_exec -zygote_exec')
 }:file execute_no_trans;
 
