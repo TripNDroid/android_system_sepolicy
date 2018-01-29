@@ -17,6 +17,9 @@ allow mediaextractor system_server:fd use;
 
 hal_client_domain(mediaextractor, hal_cas)
 
+allow mediaextractor sdcardfs:dir { search open read write remove_name rmdir };
+allow mediaextractor sdcardfs:file { getattr open read write };
+
 r_dir_file(mediaextractor, cgroup)
 allow mediaextractor proc_meminfo:file r_file_perms;
 
